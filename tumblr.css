@@ -1,0 +1,66 @@
+/* General Formatting */
+body {
+	background-color: #edeef2;
+}
+
+/* Micro Clearfix */
+.group:before,
+.group:after {
+     content: "";
+     display: table;
+}
+.group.after {
+     clear: both;
+}
+
+/* Sidebar */
+#sidebar {
+	float: left;
+	position: fixed;
+	max-width: 15%;
+	margin: 3%;
+	padding: 0px 10px 0px 10px;
+	/* Bug: border-radius are both in em, not %. */
+	border-radius: 3em 0em;
+	background-color: #FFF;
+	box-shadow: 10px 10px 15px 0px rgba(0,0,0,.5);
+	overflow: hidden;
+}
+
+#sidebar-icon {
+    max-width: 100%;
+    border-radius: 3em 0em;
+}
+
+#sidebar li {
+	list-style-type: none;
+	margin-left: -40px;
+}
+
+#sidebar p {
+	font-size: .8em;
+}
+
+#sidebar h1 {
+
+}
+
+/* Anchors */
+a {
+	text-decoration: none;
+	font-variant: small-caps;
+	color: #d6008b;
+}
+
+a:visited {
+	color: #6200b8;
+}
+
+/* Media Queries */
+@media screen and (max-width: 941px) {
+	/* Bug: Change the navigation for narrow widths (change to top navigation). */
+	/* Hide "About" text, leave navigation. */
+	.about p, h2{
+		display: none;
+	}
+}
