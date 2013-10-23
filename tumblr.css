@@ -32,7 +32,7 @@ body {
     border-radius: 3em 0em;
 }
 
-#sidebar li {
+.sidebar-links li {
 	list-style-type: none;
 	margin-left: -40px;
 }
@@ -41,8 +41,20 @@ body {
 	font-size: .8em;
 }
 
-#sidebar h1 {
+/* Page Navigation */
 
+#pagination li {
+	/* Bug: can't get navigation buttons inline. */
+	list-style-type: none;
+	display: inline;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 15%;
+}
+
+#pagination img {
+	max-width: 25%;
+	padding: 0% 5% 5% -5%;
 }
 
 /* Anchors */
