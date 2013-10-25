@@ -27,12 +27,204 @@
                 </ul>
             </div>
             <ul id="pagination">
+                <!-- <li>{block:PreviousPage}<a href="{PreviousPage}"><img src="img/hedera_left.svg" alt="Previous Page"></a>{/block:PreviousPage}</li> -->
                 <li><a href="/"><img src="img/hedera_left.svg" alt="Previous Page"></a></li>
-                <li>1 / 1</li>
+                <li><span id="page_numbers">1 / 1</span></li>
+                <!-- <li>{block:NextPage}<a href="{NextPage}"><img src="img/hedera_right.svg" alt="Next Page"></a>{/block:PreviousPage}</li> -->
                 <li><a href="/page2"><img src="img/hedera_right.svg" alt="Next Page"></a></li>
             </ul>
         </div>
     </div>
+
+    <ol id="posts">
+
+        <!-- {block:Posts}
+
+                {block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photo}
+
+                {block:Panorama}
+                    <li class="post panorama">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Panorama}
+
+                {block:Photoset}
+                    <li class="post photoset">
+                        {Photoset-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video">
+                        {Video-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio">
+                        {AudioPlayerBlack}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+            {/block:Posts}  -->
+
+        <li class="post text">
+            <h3>Shutdown 101: What's Going to Happen Tonight at Midnight?</h3>
+
+            <p>So as this is likely the first government shutdown in the memory of most if not all of the people posting here on tumblr (I was 8 in 1995), it might be helpful to refresh our memories on what exactly is going to happen when the federal government doesn’t have a budget.</p>
+
+            <ul>
+                <li>800,000 federal employees have to go home. There’s no money to pay them, and coming to work on a volunteer basis gets into some tricky legal areas. While in the past they have successfully lobbied for back pay, there’s no guarantee of it with a divided congress.</li>
+                <li>Air-traffic controllers will remain on duty. ATCs are government employees, but they are members of the 2-million odd employees that are marked as “essential”. They likely will not receive paychecks, however, until the shutdown ends.</li>
+                <li>Airport delays. While the FAA’s security screeners are essential employees, many of the people who work to support them logistically are not.</li>
+                <li>Visa applications and fees will continue to be processed, and foreign embassies and consulates remain open. So if you’re waiting on a visa application, don’t worry, it’s still in the works - though again, it’ll almost certainly be a slower process. Homeland Security and green card operations are included here, though DHS’ e-verify program - the thing that checks on the immigration status of job applicants - will no longer operate.</li>
+                <li>NASA will furlough most of its employees. Essential mission control operations and employees will continue, but the vast majority of NASA employees are going home - and I do mean home, because NASA’s on-site housing for employees is being shut down.</li>
+                <li>The military stops receiving paychecks. While the million and a half members of the US Armed Services stay on duty, they won’t get paid until after the shutdown.</li>
+                <li>The postal service continues as normal.</li>
+                <li>The federal court system stops. According to The Guardian, the federal courts would operate as normal for about 10 days before they have to start sending people home.</li>
+                <li>The NIH screeches to a halt. That includes accepting new patients for clinical research, as well as answering medical questions on their hotline.</li>
+                <li>The CDC will stop its seasonal flu program. According to the Washington Post, it will also have “a significantly reduced capacity to respond to outbreak investigations.”</li>
+                <li>HUD will no longer be able to provide local housing authorities with vouchers. So if you live in government-subsidized housing, your status is very much up in the air.</li>
+                <li>Parks and museums will close. Yosemite, Alcatraz, Yellowstone, the Smithsonian, the Library of Congress, the Statue of Liberty, and about 400 other locations will close - though interestingly, the Southern Rim of the Grand Canyon will remain open, because the state of Arizona is picking up the bill.</li>
+                <li>The EPA will shut down. The only thing that stays open at the EPA during a government shutdown is its operations around Superfund sites.</li>
+                <li>OSHA will shut down.</li>
+                <li>Social Security will be partially defunded. Social Security, as an entitlement, will remain open enough to keep the checks going out, but will lose enough staff that they won’t be able to schedule new hearings.</li>
+                <li>VA Benefits will be cut. VA hospitals remain open, but that’s about it - and if the shutdown lasts longer than a few weeks, the Department of Veterans Affairs has said that it might not have enough money to pay disability claims and pensions.</li>
+            </ul>
+                
+            <p>This is by no means an exhaustive list, but hopefully it gives everyone a pretty good idea of what we’re going to be looking at over the next few days, weeks, or (god forbid) months.</p>
+
+            <p>Feel free to send me an ask with any questions you have, and I’ll answer them to the best of my ability.</p>
+        </li>
+
+        <li class="post photo">
+            <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/3b8263b34e4c77d9bb73d187ba6d349c/tumblr_mtya2mZshf1s46332o1_400.jpg" alt="Googly eyes on To Kill a Mockingbird."/>
+
+            <div class="caption">Googly eyes on the cover of <i>To Kill a Mockingbird</i>.</div>
+        </li>
+
+        <li class="post panorama">
+            <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/85819e21657ec7442a39d80e39ccfbe1/tumblr_mv6wtsd8IA1sdkk39o1_1280.jpg" alt="Sunset in South Dakota"/>
+
+            <div class="caption">Sunset in South Dakota. <a href="http://connor-burrows.tumblr.com/post/64980432267/sun-ray-flections-by-aarongroen">(Source.)</a></div>
+        </li>
+
+        <!-- Unsure how to test a photoset. Needed?
+        <li class="post photoset">
+            <div class="caption">(Caption.)</div>
+        </li> -->
+
+        <li class="post quote">
+            <span class="q_mark">"</span>
+            <p>Here are the 18 senators, all Republicans, who voted against the final deal to end the shutdown and avert a debt default.</p>
+            <br>
+            <p>Republican Sens. Tom Coburn (Okla.), John Cornyn (Texas), Mike Crapo (Idaho), Ted Cruz (Texas), Mike Enzi (Wyo.), Chuck Grassley (Iowa), Dean Heller (Nev.), Ron Johnson (Wis.), Mike Lee (Utah), Rand Paul (Ky.), Pat Roberts (Kansas), Jim Risch (Idaho), Marco Rubio (Fla.), Tim Scott (S.C.), Jeff Sessions (Ala.), Richard Shelby (Ala.), Pat Toomey (Pa.), David Vitter (La.).</p><span class="q_mark">"</span>
+
+            <div class="source">Jennifer Bendery</div>
+        </li>
+
+        <li class="post link">
+            <a href="https://serendipity007.wordpress.com/2013/09/18/online-educational-resources/" class="link">Online Educational Resources</a>
+
+            <div class="description">A compilation of online educational resources. Mostly free, and many for programming, with some other miscellaneous info in there.</div>
+        </li>
+
+        <li class="post chat">
+            <h3><a href="http://magpieohmy.tumblr.com/post/63864330323/i-was-just-at-wal-mart-and-then">I WAS JUST AT WAL-MART AND THEN</a></h3>
+
+            <ul class="chat">
+                <li class="little_boy">Mommy, why is Wonder Woman not wearing any pants?</li>
+                <li class="the_mom">Because Wonder Woman has amazing thighs and she could crush men with them if they insult her.</li>
+                <li class="little_boy">I wanna be Wonder Woman.</li>
+                <li class="the_mom">Don't we all.</li>
+            </ul>
+        </li>
+
+        <!-- Ditto for these two following post types (video and audio).
+        <li class="post video">
+            <div class="caption">(Caption.)</div>
+        </li>
+
+        <li class="post audio">
+            <div class="caption">(Caption.)</div>
+        </li> -->
+
+    </ol>
 
 </body>
 </html>
