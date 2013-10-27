@@ -1,17 +1,20 @@
+/* To do:
+Use div (#content) to fix sidebar so it scrolls within the div. (And therefore is entirely visible when you scroll down.)
+Work on iPad (middle res) funky margins/padding.
+Make bottom pagination links for the two smaller resolutions. Resource: http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/
+Bug: Figure out why the columns get funky in the middle resolutions (posts drop below sidebar).
+Create columns. Might fix above bug.
+Small resolution: Change the sidebar image so it's wider and shorter, without changing out the image itself. (Changing frame to hide it.)
+Have sidebar scroll within #content div. (Needs to show full sidebar when you scroll down, and hover after that.)
+Change content sizes so that post boxes look good with max-width: 500px images.
+Change quote images to svg files.
+Make heading different font (either with Google fonts or PS file). */
+
 /* General Formatting */
 html {
     font-size: 100%; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
-}
-
-body {
-	background-color: #edeef2;
-	margin: 0;
-}
-
-img {
-	max-width: 90%;
 }
 
 /* Micro Clearfix */
@@ -24,78 +27,12 @@ img {
      clear: both;
 }
 
-/* Group Selectors */
-#sidebar, #posts {
-	margin: 3%;
-	padding: 0% 1%;
-}
-
-#sidebar, .post {
-	background-color: #FFF;
-	box-shadow: 10px 10px 15px 0px rgba(0,0,0,.5);
-}
-
-/* Sidebar */
-#sidebar {
-	float: left;
-	position: static;
-	max-width: 15%;
-	/* Bug: border-radius are both in em, not %. */
-	border-radius: 3em 0em;
-}
-
-#sidebar-icon {
-    max-width: 100%;
-    border-radius: 3em 0em;
-}
-
-.nav li {
-	list-style-type: none;
-	margin-left: -40px;
-}
-
-#sidebar p {
-	font-size: .8em;
-}
-
-/* Page Navigation */
-
-#pagination li {
-	/* Bug: can't get navigation text to center vertically (between the two icons).
-	Tried to remedy this by adding a span and ID, then a selector (commented out below.) */
-	/* Bug: navigation isn't centering properly in the sidebar. */
-	list-style-type: none;
-	display: inline;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 15%;
-}
-
-#pagination img {
-	max-width: 25%;
-	padding: 0% 5% 5% -5%;
-}
-
-/*#page_numbers {
-	vertical-align: center;
-}*/
-
-/* Global Post Rules */
-
-#posts {
-	float: right;
-	max-width: 69%;
-}
-
-#posts > li {
-	list-style-type: none;
-}
-
-/* Post-Specific Rules */
-.post {
-	padding: 1% 3%;
-	margin: 0% 1% 10% 1%;
-	border-radius: 0em 3em 0em 3em;
+body {
+	background-color: #edeef2;
+	margin: 0;
+	font-family: Garamond, "Times New Roman", Times, serif;
+	color: #474747;
+	font-size: 1.5em;
 }
 
 /* Anchors */
@@ -109,31 +46,168 @@ a:visited {
 	color: #6200b8;
 }
 
+/* Group Selectors */
+#title {
+	padding: 3%;
+	text-align: center;
+	font-size: 3em;
+	font-weight: 700;
+}
+
+#content {
+	margin: 2%;
+	padding: 0% 1%;
+	line-height: 1.35em;
+	font-weight: 300;
+}
+
+#sidebar, .post {
+	background-color: #FFF;
+	box-shadow: .5em .5em 1em 0em rgba(0,0,0,.5);
+}
+
+/* Sidebar */
+#sidebar {
+	float: left;
+	/*position: fixed;*/
+	max-width: 25%;
+	/* Bug: border-radius are in em, not %. */
+	border-radius: 3em 0em;
+	line-height: 1em;
+	text-align: right;
+}
+
+#sidebar-icon {
+    max-width: 100%;
+    margin: 5%;
+}
+
+#sidebar-icon img {
+	border-radius: 3em 0em;
+	max-width: 100%;
+}
+
+.about {
+	padding: 0em 1em 1em 1em;
+}
+
+.nav li {
+	list-style-type: none;
+}
+
+#sidebar p {
+	font-size: .8em;
+}
+
+/* Page Navigation */
+
+#pagination li {
+	/* Bug: can't get navigation text to center vertically (between the two icons).
+	Tried to remedy this by adding a span and ID, then a selector (commented out below.) */
+	list-style-type: none;
+	display: inline;
+}
+
+#pagination img {
+	max-width: 25%;
+}
+
+/* Global Post Rules */
+
+#posts {
+	float: right;
+	max-width: 70%;
+	/* Below: right propotions, wrong units.
+	max-width: 768px;*/
+	margin-top: 0em;
+}
+
+#posts > li {
+	list-style-type: none;
+}
+
+/* Post-Specific Rules */
+.post {
+	padding: 5%;
+	margin: 0% 1% 10% 1%;
+	border-radius: 0em 3em;
+}
+
+.post img {
+	max-width: 100%;
+	border-radius: 0em 2em;
+}
+
+/* Lists Within Posts */
+.post li {
+	list-style-type: disc;
+}
+
+/* Global Caption Selector */
+.caption {
+	padding-top: 1em;
+}
+
+/* Type-specific Selectors */
+.caption li, .text li {
+	padding-bottom: .5em;
+}
+
+.text h3, .chat h3 {
+	margin-top: 0em;
+}
+
+/* Quote Marks */
+.q-mark img {
+	border-radius: 0%;
+}
+
+/* Floats second quote mark to right of post. */
+.q-end {
+	float: right;
+}
+
 /* Media Queries */
 @media screen and (max-width: 941px) {
+/* Hides "About" text, leave navigation. */
 	#sidebar {
 		padding: 0% 1.5%;
 	}
 
-	/* Hides "About" text, leave navigation. */
 	.about p, h2{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 815px){
+/* Hides pagination and centers the navigation links. */
+	#sidebar-icon img{
+		border-radius: 2em 0em;
+	}
+
+	.nav {
+		text-align: center;
+	}
+
+	#pagination {
 		display: none;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	/* Changes navigation to top navigation. */
-	#sidebar {
-		position: static;
-		max-width: 90%;
-		box-shadow: none;
-		margin: -1% 1% 1% 2%;
+	#sidebar, #posts {
+		float: none;
+		margin: 5%;
 		padding: 1% 3%;
 	}
 
-	/* Bug: How to change the sidebar image so it's wider and shorter, without changing the image itself? (Changing frame to hide it.)
-	#sidebar img {
-	} */
+	#sidebar, .post {
+		background-color: #FFF;
+		position: static;
+		max-width: 85%;
+		box-shadow: none;
+	}
 
 	.nav li {
 		text-align: center;
@@ -143,5 +217,17 @@ a:visited {
 
 	#pagination {
 		display: none;
+	}
+
+	#title {
+		font-size: 2.5em;
+	}
+
+	#posts {
+		margin: 0%;
+	}
+
+	.post {
+		margin: 0% 5% 10% 5%;
 	}
 }
